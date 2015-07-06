@@ -1,0 +1,65 @@
+body{
+	font-family: 'Oswald' sans-serif;
+	color: white;
+	background-color: #525A7C;
+	max-width: 500px;
+	margin: 0 auto;
+}
+header{
+	text-align: center;
+	max-width: 500px;
+}
+#button-container{
+	background-color: #FF756B;
+	border: 2px solid #FF756B;
+	border-radius: 10px;
+	max-width: 500px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+@media (max-width: 500px){
+	h1{
+		font-size: 24px;
+}
+}
+
+ul{
+	padding: 10px;
+}
+li{
+	display: inline;
+	padding: 0px;
+	margin: 16px;
+}
+input{
+	font-size: 30px;
+	width: 200px;
+	border: 0px solid #FF756B;
+	border-radius: 4px;
+}
+#submit{
+	font-size: 30px;
+	cursor: pointer;
+	text-decoration: none;
+	color: white;
+	background-color: #FF756B;
+	font-family: 'Oswald', sans-serif;
+	border: none;
+	outline: none;
+
+}
+#replay, #answer{
+	cursor: pointer;
+	text-decoration: none;
+	color: white;
+	background-color: #FF756B;
+	font-family: 'Oswald', sans-serif;
+	border: none;
+	outline: none;
+	font-size: 28px;
+	margin: 0px;
+}
+#replay:hover, #answer:hover, #submit:hover{
+	text-shadow: 2px 2px #B11900;
+}
