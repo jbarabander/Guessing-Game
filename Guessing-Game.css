@@ -37,6 +37,8 @@ input{
 	width: 200px;
 	border: 0px solid #FF756B;
 	border-radius: 4px;
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
 }
 #submit{
 	font-size: 30px;
