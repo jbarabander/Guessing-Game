@@ -11,7 +11,7 @@ $(document).ready(function(){
 		var diff = guess - randomInt;
 
 		$('.direction').empty();
-		
+
 		if(8 <= guesses.length){
 			$('.clue').text('Sorry the game is over.  Please try again!');
 			return;
@@ -29,13 +29,13 @@ $(document).ready(function(){
 			$('.clue').text('Congratulations');
 		}
 		else if(Math.abs(diff) <= 2){
-			$('.clue').text('You are scalding hot right now');
+			$('.clue').text('You are on Fiyah');
 		}
 		else if(Math.abs(diff) <= 5){
-			$('.clue').text('You are really hot');
+			$('.clue').text('You are hot');
 		}
 		else if(Math.abs(diff) <= 10){
-			$('.clue').text('You are hot');
+			$('.clue').text('You are warm');
 		}
 		else if(Math.abs(diff) <= 20){
 			$('.clue').text('You are cold');
@@ -44,24 +44,22 @@ $(document).ready(function(){
 			$('.clue').text('You are very cold');
 		}
 		else {
-			$('.clue').text('You are freezing');
+			$('.clue').text('You are so cold, you might as well build an igloo');
 		}
 
 		if(guess - randomInt < 0){
-			$('.direction').text(', try guessing higher');
+			$('.direction').text(', try guessing higher.');
 		}
 		else if(guess - randomInt > 0){
-			$('.direction').text(', try guessing lower');
+			$('.direction').text(', try guessing lower.');
 		}
 		else {
 			$('.direction').text(', you guessed right!');
 		}
-
 		guesses.push(guess);
 	});
 	$('#button-container').find('#replay').on('click', function(){
-		randomInt = genRandomInt(1,100);
 		guesses = [];
+		randomInt = genRandomInt(1,100);
 	});
-
 });
