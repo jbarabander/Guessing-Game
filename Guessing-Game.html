@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <head>
 	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-	<link href="Guessing-Game.css" rel="stylesheet">
+	<link href='Guessing-Game.css' rel='stylesheet'>
+	<script type='text/javascript' src='jquery-1.11.3.js'></script>
+	<script type='text/javascript' src='Guessing-Game.js'></script>
 	<title>Guess the Number!</title>
+
 </head>
 <body>
 	<header>
 		<h1>Guess the Number!</h1>
 	</header>
 
-	<div id="button-container">
-		<input type="text" placeholder="Integer (1-100)">
-		<button id="submit">Take a Guess!</button>
+	<div id='button-container'>
+		<input type='text' placeholder='Integer (1-100)'>
+		<button id='submit'>Take a Guess!</button>
 		<ul>
-			<li><button id="replay">Try again</button></li>
-			<li><button id="answer">Get a Hint</button></li>
+			<li><button id='replay'>Try again</button></li>
+			<li><button id='answer'>Get a Hint</button></li>
 		</ul>
 	</div>
+	<h2> <span class='clue'></span><span class='upOrDown'></span></h2>
 	<hr>
 	<div>
 		<h2>Instructions</h2>
 		<p>
-		Guess a number between 1-100.  Based on your initial guess the program will tell you both how close you are to the target number and 
+		Guess a number between 1-100.  Based on your initial guess the program will tell you both how close you are to the target number and
 		and whether you need to guess higher or lower.  You will have 7 chances to guess the correct number.
 		</p>
 	</div>
