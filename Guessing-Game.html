@@ -17,17 +17,22 @@
 		<button id='submit'>Take a Guess!</button>
 		<ul>
 			<li><button id='replay'>Try again</button></li>
-			<li><button id='answer'>Get a Hint</button></li>
+			<li><button id='answer'>Show Hint</button></li>
+			<!-- FIXME: I don't want the Try Again button to move over once the text changes from Show Hint to Hide Hint. -->
 		</ul>
 	</div>
 	<h2> <span class='clue'></span><span class='direction'></span></h2>
-	<ul class='guess-container'> </ul>
-	<h2 class='show-answer'></h2>
+	<h2 class='show-answer'>The number you are looking for is: </h2>
+	<table class='guess-container'>
+		<tr class='guess-num'></tr>
+		<tr class='guess-entry'></tr>
+		<tr class='hot-or-cold'></tr>
+	</table>
 	<hr>
 	<div>
 		<h2>Instructions</h2>
 		<p>
-		Guess a number between 1-100.  Based on your initial guess the program will tell you both how close you are to the target number and
+		Guess a number between 1-100.  Based on your guess the program will tell you both how close you are to the target number and
 		and whether you need to guess higher or lower.  You will have 8 chances to guess the correct number.
 		</p>
 	</div>

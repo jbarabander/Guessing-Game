@@ -67,3 +67,21 @@ input{
 #replay:hover, #answer:hover, #submit:hover{
 	text-shadow: 2px 2px #B11900;
 }
+
+.show-answer{
+	display: none;
+}
+
+table{
+	display: none;
+	border: 2px solid white;
+	table-layout: auto;
+	text-align: center;
+	margin: 0 auto;
+}
+td{
+	border: 2px solid white;
+	width: 55px;
+	padding: 0px;
+	margin: 0 auto;
+}
