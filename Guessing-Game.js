@@ -86,7 +86,6 @@ $(document).ready(function(){
 		$('.guess-container').fadeIn();
 	}
 
-
 	$('#button-container').on('click', '#submit', submit);
 	$('input').on('keypress',function(event){
 		if(event.which === 13){
@@ -104,8 +103,8 @@ $(document).ready(function(){
 			$('.guess-container').find('.guess-entry td').not(':first').remove();
 			$('.guess-container').find('.hot-or-cold td').not(':first').remove();
 		});
-		$('img').fadeOut();
 		$('body').css({'background-color': '#525A7C'});
+		$('img').fadeOut();
 		$('.show-answer').fadeOut();
 		$('#answer').text('Show Hint');
 	});
