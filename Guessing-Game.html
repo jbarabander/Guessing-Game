@@ -16,18 +16,22 @@
 		<input type='text' placeholder='Integer (1-100)'>
 		<button id='submit'>Take a Guess!</button>
 		<ul>
-			<li><button id='replay'>Try again</button></li>
+			<li><button id='replay'>Play again</button></li>
 			<li><button id='answer'>Show Hint</button></li>
 			<!-- FIXME: I don't want the Try Again button to move over once the text changes from Show Hint to Hide Hint. -->
 		</ul>
 	</div>
-	<h2> <span class='clue'></span><span class='direction'></span></h2>
-	<h2 class='show-answer'>The number you are looking for is: </h2>
-	<table class='guess-container'>
-		<tr class='guess-num'></tr>
-		<tr class='guess-entry'></tr>
-		<tr class='hot-or-cold'></tr>
-	</table>
+	<div id='prompt-container'>
+		<!-- <h2 class='vs-last'><h2> -->
+		<h2> <span class='clue'></span><span class='direction'></span></h2>
+		<img class='svg' src='royal32-white.svg'>
+		<h2 class='show-answer'>The number you are looking for is: </h2>
+		<table class='guess-container'>
+			<tr class='guess-num'><td>#</td></tr>
+			<tr class='guess-entry'><td>Guess</td></tr>
+			<tr class='hot-or-cold'><td>Closeness</td></tr>
+		</table>
+	</div>
 	<hr>
 	<div>
 		<h2>Instructions</h2>

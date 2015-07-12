@@ -6,9 +6,12 @@ $(document).ready(function(){
 	var randomInt = genRandomInt(1, 100);
 	var guesses = [];
 	var heat;
-
-	$('#button-container').on('click', '#submit', function(){
-		var guess = $(this).closest('#button-container').find('input').val();
+	function clueHeatSpec(message, closeness){
+		$('.clue').text(message);
+		heat = closeness;
+	}
+	function submit(){
+		var guess = $('input').val();
 		var diff = guess - randomInt;
 
 		$('.direction').empty();
@@ -27,32 +30,29 @@ $(document).ready(function(){
 		}
 
 		if(Math.abs(diff) === 0){
-			$('.clue').text('Congratulations - ');
-			heat = 'answer'
+		clueHeatSpec('Congratulations - ', 'answer');
+			$('body').css({'background-color': '#2A36A8'});
+			$('img').fadeIn();
+			$('.show-answer').fadeOut();
+			$('#answer').text('Show Hint');
 		}
 		else if(Math.abs(diff) <= 2){
-			$('.clue').text('You are on Fiyah -');
-			heat = 'very hot';
+		clueHeatSpec('You are on Fiyah - ', 'very hot');
 		}
 		else if(Math.abs(diff) <= 5){
-			$('.clue').text('You are hot - ');
-			heat = 'hot';
+		clueHeatSpec('You are hot - ', 'hot');
 		}
 		else if(Math.abs(diff) <= 10){
-			$('.clue').text('You are warm - ');
-			heat = 'warm';
+		clueHeatSpec('You are warm - ', 'warm');
 		}
 		else if(Math.abs(diff) <= 20){
-			$('.clue').text('You are cool - ');
-			heat = 'cool';
+		clueHeatSpec('You are cool - ', 'cool');
 		}
 		else if(Math.abs(diff) <= 30){
-			$('.clue').text('You are cold - ');
-			heat = 'cold';
+		clueHeatSpec('You are cold - ', 'cold');
 		}
 		else {
-			$('.clue').text('You are so cold, you might as well build an igloo - ');
-			heat = 'very cold';
+		clueHeatSpec('You are so cold, you could build an igloo - ', 'very cold');
 		}
 
 		if(guess - randomInt < 0){
@@ -63,23 +63,53 @@ $(document).ready(function(){
 
 		}
 		else {
-			$('.direction').text('you guessed right!');
+			$('.direction').text('you are the king of the guessing game!');
 		}
+
+		// if(guesses.length !== 0){
+		// 	if(Math.abs(diff) <= Math.abs(randomInt - guesses[guesses.length - 1])){
+		// 		$('.vs-last').text('You are getting closer');
+		// 	}
+		// 	else {
+		// 		$('.vs-last').text('You are getting farther away');
+		// 	}
+		// }
+		// if(guesses.length === 8){
+		// 	$('.vs-last').empty();
+		// }
+
 		guesses.push(guess);
 
 		$('.guess-container').find('.guess-num').append('<td>' + guesses.length + '</td>');
 		$('.guess-container').find('.guess-entry').append('<td>' + guess + '</td>');
 		$('.guess-container').find('.hot-or-cold').append('<td>' + heat + '</td>');
 		$('.guess-container').fadeIn();
+	}
+
+
+	$('#button-container').on('click', '#submit', submit);
+	$('input').on('keypress',function(event){
+		if(event.which === 13){
+			submit();
+		}
 	});
+
 	$('#button-container').on('click', '#replay', function(){
 		guesses = [];
 		randomInt = genRandomInt(1,100);
 		$('.direction').empty();
-		$('.clue').text('You started a New Game');
-		$('.guess-container').fadeOut();
-		$('.guess-container').find('tr').empty();
+		$('.clue').text('You started a new game');
+		$('.guess-container').fadeOut(function(){
+			$('.guess-container').find('.guess-num td').not(':first').remove();
+			$('.guess-container').find('.guess-entry td').not(':first').remove();
+			$('.guess-container').find('.hot-or-cold td').not(':first').remove();
+		});
+		$('img').fadeOut();
+		$('body').css({'background-color': '#525A7C'});
+		$('.show-answer').fadeOut();
+		$('#answer').text('Show Hint');
 	});
+
 	$('#button-container').on('click','#answer', function(){
 		if($(this).text() === 'Show Hint'){
 			//FIXME: I don't want the Try Again button to move over once the text changes from Show Hint to Hide Hint.

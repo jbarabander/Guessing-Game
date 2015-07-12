@@ -2,7 +2,7 @@ body{
 	font-family: 'Oswald', sans-serif;
 	color: white;
 	background-color: #525A7C;
-	max-width: 500px;
+	max-width: 600px;
 	margin: 0 auto;
 }
 
@@ -14,9 +14,8 @@ header{
 }
 #button-container{
 	background-color: #FF756B;
-	border: 2px solid #FF756B;
+	border: 1px solid #FF756B;
 	border-radius: 10px;
-	max-width: 500px;
 	text-align: center;
 }
 
@@ -42,25 +41,20 @@ input{
 	font-family: 'Oswald', sans-serif;
 	text-align: center;
 }
+button{
+	cursor: pointer;
+	text-decoration: none;
+	color: white;
+	background-color: #FF756B;
+	font-family: 'Oswald', sans-serif;
+	border: none;
+	outline: none;
+	font-size: 30px;
+}
 #submit{
 	font-size: 30px;
-	cursor: pointer;
-	text-decoration: none;
-	color: white;
-	background-color: #FF756B;
-	font-family: 'Oswald', sans-serif;
-	border: none;
-	outline: none;
-
 }
 #replay, #answer{
-	cursor: pointer;
-	text-decoration: none;
-	color: white;
-	background-color: #FF756B;
-	font-family: 'Oswald', sans-serif;
-	border: none;
-	outline: none;
 	font-size: 28px;
 	margin: 0px;
 }
@@ -81,7 +75,14 @@ table{
 }
 td{
 	border: 2px solid white;
-	width: 55px;
+	width: 66px;
 	padding: 0px;
 	margin: 0 auto;
+}
+
+#prompt-container{
+	text-align: center;
+}
+img{
+	display: none;
 }
