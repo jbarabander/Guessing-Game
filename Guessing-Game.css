@@ -2,6 +2,9 @@ body{
 	font-family: 'Oswald', sans-serif;
 	color: white;
 	background-color: #525A7C;
+}
+
+div, hr{
 	max-width: 600px;
 	margin: 0 auto;
 }
@@ -12,8 +15,11 @@ h1{
 header{
 	text-align: center;
 }
+
+
 #button-container{
 	background-color: #FF756B;
+	/*try changing to other color #00D7B0*/
 	border: 1px solid #FF756B;
 	border-radius: 10px;
 	text-align: center;

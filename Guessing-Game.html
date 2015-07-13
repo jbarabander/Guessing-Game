@@ -1,42 +1,44 @@
 <!DOCTYPE html>
-<head>
-	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-	<link href='Guessing-Game.css' rel='stylesheet'>
-	<script type='text/javascript' src='jquery-1.11.3.js'></script>
-	<script type='text/javascript' src='Guessing-Game.js'></script>
-	<title>Guess the Number!</title>
-</head>
-<body>
-	<header>
-		<h1>Guess the Number!</h1>
-	</header>
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<link href='Guessing-Game.css' rel='stylesheet'>
+		<script type='text/javascript' src='jquery-1.11.3.js'></script>
+		<script type='text/javascript' src='Guessing-Game.js'></script>
+		<title>Guess the Number!</title>
+	</head>
+	<body>
+		<header>
+			<h1>Guess the Number!</h1>
+		</header>
 
-	<div id='button-container'>
-		<input type='text' placeholder='Integer (1-100)'>
-		<button id='submit'>Take a Guess!</button>
-		<ul>
-			<li><button id='replay'>Play again</button></li>
-			<li><button id='answer'>Show Hint</button></li>
-			<!-- FIXME: I don't want the Try Again button to move over once the text changes from Show Hint to Hide Hint. -->
-		</ul>
-	</div>
-	<div id='prompt-container'>
-		<!-- <h2 class='vs-last'><h2> -->
-		<h2> <span class='clue'></span><span class='direction'></span></h2>
-		<img class='svg' src='royal32-white.svg'>
-		<h2 class='show-answer'>The number you are looking for is: </h2>
-		<table class='guess-container'>
-			<tr class='guess-num'><td>#</td></tr>
-			<tr class='guess-entry'><td>Guess</td></tr>
-			<tr class='hot-or-cold'><td>Closeness</td></tr>
-		</table>
-	</div>
-	<hr>
-	<div>
-		<h2>Instructions</h2>
-		<p>
-		Guess a number between 1-100.  Based on your guess the program will tell you both how close you are to the target number and
-		and whether you need to guess higher or lower.  You will have 8 chances to guess the correct number.
-		</p>
-	</div>
-</body>
+		<div id='button-container'>
+			<input type='text' placeholder='Integer (1-100)'>
+			<button id='submit'>Take a Guess!</button>
+			<ul>
+				<li><button id='replay'>Play again</button></li>
+				<li><button id='answer'>Show Hint</button></li>
+				<!-- FIXME: I don't want the Try Again button to move over once the text changes from Show Hint to Hide Hint. -->
+			</ul>
+		</div>
+		<div id='prompt-container'>
+			<!-- <h2 class='vs-last'><h2> -->
+			<h2> <span class='clue'></span><span class='direction'></span></h2>
+			<img class='svg' src='royal32-white.svg'>
+			<h2 class='show-answer'>The number you are looking for is: </h2>
+			<table class='guess-container'>
+				<tr class='guess-num'><td>#</td></tr>
+				<tr class='guess-entry'><td>Guess</td></tr>
+				<tr class='hot-or-cold'><td>Closeness</td></tr>
+			</table>
+		</div>
+		<hr>
+		<div>
+			<h2>Instructions</h2>
+			<p>
+				Guess a number between 1-100.  Based on your guess the program will tell you both how close you are to the target number and
+				and whether you need to guess higher or lower.  You will have 8 chances to guess the correct number.
+			</p>
+		</div>
+	</body>
+</html>
