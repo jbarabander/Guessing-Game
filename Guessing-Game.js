@@ -35,6 +35,7 @@ $(document).ready(function(){
 			$('#crown').fadeIn();
 			$('.show-answer').fadeOut();
 			$('#answer').text('Show Hint');
+			// $('.vs-last').remove();
 		}
 		else if(Math.abs(diff) <= 2){
 		clueHeatSpec('You are on Fiyah - ', 'very hot');
@@ -107,6 +108,7 @@ $(document).ready(function(){
 		$('#crown').fadeOut();
 		$('.show-answer').fadeOut();
 		$('#answer').text('Show Hint');
+		// $('.vs-last').remove();
 	});
 
 	$('#button-container').on('click','#answer', function(){
