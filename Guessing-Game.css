@@ -91,14 +91,12 @@ td{
 }
 #crown{
 	display: none;
-	margin-bottom: 20px
+	margin-bottom: 20px;
+	font-size: 12px
 }
 
 a{
 	color: #47DAFF;
-}
-#crown p{
-	font-size: 12px;
 }
 
 #credits{

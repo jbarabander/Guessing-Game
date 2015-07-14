@@ -80,10 +80,10 @@ $(document).ready(function(){
 
 		guesses.push(guess);
 
-		$('.guess-container').find('.guess-num').append('<td>' + guesses.length + '</td>');
-		$('.guess-container').find('.guess-entry').append('<td>' + guess + '</td>');
-		$('.guess-container').find('.hot-or-cold').append('<td>' + heat + '</td>');
-		$('.guess-container').fadeIn();
+		$('#guess-num').append('<td>' + guesses.length + '</td>');
+		$('#guess-entry').append('<td>' + guess + '</td>');
+		$('#hot-or-cold').append('<td>' + heat + '</td>');
+		$('#guess-container').fadeIn();
 	}
 
 	$('#button-container').on('click', '#submit', submit);
@@ -98,10 +98,10 @@ $(document).ready(function(){
 		randomInt = genRandomInt(1,100);
 		$('.direction').empty();
 		$('.clue').text('You started a new game');
-		$('.guess-container').fadeOut(function(){
-			$('.guess-container').find('.guess-num td').not(':first').remove();
-			$('.guess-container').find('.guess-entry td').not(':first').remove();
-			$('.guess-container').find('.hot-or-cold td').not(':first').remove();
+		$('#guess-container').fadeOut(function(){
+			$('#guess-num td').not(':first').remove();
+			$('#guess-entry td').not(':first').remove();
+			$('#hot-or-cold td').not(':first').remove();
 		});
 		$('body').css({'background-color': '#525A7C'});
 		$('#crown').fadeOut();
