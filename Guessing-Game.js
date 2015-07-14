@@ -32,7 +32,7 @@ $(document).ready(function(){
 		if(Math.abs(diff) === 0){
 		clueHeatSpec('Congratulations - ', 'answer');
 			$('body').css({'background-color': '#2A36A8'});
-			$('img').fadeIn();
+			$('#crown').fadeIn();
 			$('.show-answer').fadeOut();
 			$('#answer').text('Show Hint');
 		}
@@ -104,7 +104,7 @@ $(document).ready(function(){
 			$('.guess-container').find('.hot-or-cold td').not(':first').remove();
 		});
 		$('body').css({'background-color': '#525A7C'});
-		$('img').fadeOut();
+		$('#crown').fadeOut();
 		$('.show-answer').fadeOut();
 		$('#answer').text('Show Hint');
 	});

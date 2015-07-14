@@ -89,6 +89,18 @@ td{
 #prompt-container{
 	text-align: center;
 }
-img{
+#crown{
 	display: none;
+	margin-bottom: 20px
+}
+
+a{
+	color: #47DAFF;
+}
+#crown p{
+	font-size: 12px;
+}
+
+#credits{
+	width: 210px;
 }
