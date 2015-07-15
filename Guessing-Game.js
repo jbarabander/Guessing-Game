@@ -83,12 +83,10 @@ $(document).ready(function(){
 
 		guesses.push(guess);
 
-		if(guesses.length <= 8){
-  		$('#guess-num').append('<td>' + guesses.length + '</td>');
-  		$('#guess-entry').append('<td>' + guess + '</td>');
-  		$('#hot-or-cold').append('<td>' + heat + '</td>');
-  		$('#guess-container').fadeIn();
-		}
+  	$('#guess-num').append('<td>' + guesses.length + '</td>');
+  	$('#guess-entry').append('<td>' + guess + '</td>');
+  	$('#hot-or-cold').append('<td>' + heat + '</td>');
+  	$('#guess-container').fadeIn();
 }
 
 	$('#button-container').on('click', '#submit', submit);
