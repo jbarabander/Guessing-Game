@@ -24,11 +24,6 @@ $(document).ready(function(){
 		var guess = $('input').val();
 		var diff = guess - randomInt;
 
-		if(8 <= guesses.length){
-			$('#clue').text('Sorry the game is over.  Please try again!');
-			return;
-		}
-
 		if((guess % 1 !== 0) || (100 < guess) || (guess < 1)){
 			$('#clue').text('Please enter an integer between 1 & 100');
 			return;
@@ -82,6 +77,15 @@ $(document).ready(function(){
 		// }
 
 		guesses.push(guess);
+
+		if(8 === guesses.length){
+			if(Math.abs(diff) !== 0){
+				$('#clue').text('Sorry the game is over.  Please try again!');
+			}
+		}
+		else if(8 < guesses.length){
+			$('#clue').text('Sorry the game is over.  Please try again!');
+		}
 
 		if(guesses.length <= 8){
   		$('#guess-num').append('<td>' + guesses.length + '</td>');
