@@ -7,61 +7,67 @@ $(document).ready(function(){
 	var guesses = [];
 	var heat;
 	function clueHeatSpec(message, closeness){
-		$('.clue').text(message);
+		$('#clue').text(message);
 		heat = closeness;
 	}
+
+	function direction(num){
+		if(num < 0){
+			$('#clue').append('try guessing higher.');
+		}
+		else if(num > 0){
+			$('#clue').append('try guessing lower.');
+		}
+	}
+
 	function submit(){
 		var guess = $('input').val();
 		var diff = guess - randomInt;
 
-		$('.direction').empty();
+		if(8 <= guesses.length){
+			$('#clue').text('Sorry the game is over.  Please try again!');
+			return;
+		}
 
 		if((guess % 1 !== 0) || (100 < guess) || (guess < 1)){
-			$('.clue').text('Please enter an integer between 1 & 100');
+			$('#clue').text('Please enter an integer between 1 & 100');
 			return;
 		}
 		if(guesses.indexOf(guess) !== -1){
-			$('.clue').text('You already guessed that number');
+			$('#clue').text('You already guessed that number');
 			return;
 		}
 
 		if(Math.abs(diff) === 0){
-		clueHeatSpec('Congratulations - ', 'answer');
-			$('body').css({'background-color': '#2A36A8'});
-			$('#crown').fadeIn();
-			$('.show-answer').fadeOut();
-			$('#answer').text('Show Hint');
-			// $('.vs-last').remove();
+			clueHeatSpec('Congratulations - you are the king of the guessing game!', 'answer');
+				$('body').css({'background-color': '#2A36A8'});
+				$('#crown').fadeIn();
+				$('.show-answer').fadeOut();
+				$('#answer').text('Show Hint');
+				// $('.vs-last').remove();
 		}
 		else if(Math.abs(diff) <= 2){
-		clueHeatSpec('You are on Fiyah - ', 'very hot');
+			clueHeatSpec('You are on Fiyah - ', 'very hot');
+
 		}
 		else if(Math.abs(diff) <= 5){
-		clueHeatSpec('You are hot - ', 'hot');
+			clueHeatSpec('You are hot - ', 'hot');
 		}
 		else if(Math.abs(diff) <= 10){
-		clueHeatSpec('You are warm - ', 'warm');
+			clueHeatSpec('You are warm - ', 'warm');
 		}
 		else if(Math.abs(diff) <= 20){
-		clueHeatSpec('You are cool - ', 'cool');
+			clueHeatSpec('You are cool - ', 'cool');
 		}
 		else if(Math.abs(diff) <= 30){
-		clueHeatSpec('You are cold - ', 'cold');
+			clueHeatSpec('You are cold - ', 'cold');
 		}
 		else {
-		clueHeatSpec('You are so cold, you could build an igloo - ', 'very cold');
+			clueHeatSpec('You are so cold, you could build an igloo - ', 'very cold');
 		}
 
-		if(guess - randomInt < 0){
-			$('.direction').text('try guessing higher.');
-		}
-		else if(guess - randomInt > 0){
-			$('.direction').text('try guessing lower.');
+		direction(diff);
 
-		}
-		else {
-			$('.direction').text('you are the king of the guessing game!');
-		}
 
 		// if(guesses.length !== 0){
 		// 	if(Math.abs(diff) <= Math.abs(randomInt - guesses[guesses.length - 1])){
@@ -76,11 +82,6 @@ $(document).ready(function(){
 		// }
 
 		guesses.push(guess);
-
-		if(8 <= guesses.length){
-  		$('.direction').empty();
-  		$('.clue').text('Sorry the game is over.  Please try again!');
-		}
 
 		if(guesses.length <= 8){
   		$('#guess-num').append('<td>' + guesses.length + '</td>');
@@ -100,8 +101,7 @@ $(document).ready(function(){
 	$('#button-container').on('click', '#replay', function(){
 		guesses = [];
 		randomInt = genRandomInt(1,100);
-		$('.direction').empty();
-		$('.clue').text('You started a new game');
+		$('#clue').text('You started a new game');
 		$('#guess-container').fadeOut(function(){
 			$('#guess-num td').not(':first').remove();
 			$('#guess-entry td').not(':first').remove();
